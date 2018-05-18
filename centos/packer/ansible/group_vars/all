@@ -1,0 +1,13 @@
+docker_edition: 'ce'
+docker_package: "docker-{{ docker_edition }}"
+docker_package_state: present
+docker_restart_on_package_change: True
+docker_install_compose: False
+docker_compose_version: "1.21.1"
+docker_compose_path: /usr/local/bin/docker-compose
+docker_yum_repo_url: https://download.docker.com/linux/centos/docker-{{ docker_edition }}.repo
+docker_yum_repo_enable_edge: 0
+docker_yum_repo_enable_test: 0
+
+docker_users:
+  - centos

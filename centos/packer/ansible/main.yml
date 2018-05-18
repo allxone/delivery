@@ -2,7 +2,6 @@
 - hosts: all
   become: yes
   gather_facts: yes
-  tasks:
-    - name: TEST
-      shell: echo "DONE" > /done.txt
+  roles:
+    - geerlingguy.docker
 

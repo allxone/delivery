@@ -2,8 +2,8 @@
   "variables": {
     "vm_name": "packer-centos",
     "cpu": "2",
-    "ram_size": "2048",
-    "disk_size": "131028"
+    "ram_size": "4096",
+    "disk_size": "32768"
   },
   "provisioners": [
     {
@@ -13,7 +13,9 @@
     },
     {
       "type": "ansible-local",
-      "playbook_file": "ansible/main.yml"
+      "playbook_file": "ansible/main.yml",
+      "group_vars": "ansible/group_vars",
+      "galaxy_file": "requirements.yml"
     },
     {
       "type": "shell",
@@ -26,10 +28,11 @@
     {
       "vm_name":"{{user `vm_name`}}",
       "type": "hyperv-iso",
+      "output_directory": "Q:\\HYPERVDATA\\Templates\\CENTOS-HYPERV",
       "disk_size": "{{user `disk_size`}}",
       "guest_additions_mode": "disable",
       "iso_urls": [
-        "C:\\Users\\allxo_000\\Downloads\\CentOS-7-x86_64-Minimal-1804.iso",
+        "Q:\\DOWNLOADS\\CentOS-7-x86_64-Minimal-1804.iso",
         "http://mirrors.mit.edu/centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-1804.iso"
       ],
       "iso_checksum_type": "sha256",
