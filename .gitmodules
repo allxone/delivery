@@ -1,0 +1,3 @@
+[submodule "hashicorp-plugins"]
+	path = hashicorp-plugins
+	url = https://github.com/flynnhandley/hashicorp-plugins.git
