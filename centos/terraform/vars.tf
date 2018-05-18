@@ -29,3 +29,8 @@ variable "vm_quantity" {
   description = "Number of virtual machines"
   default     = "1"
 }
+
+variable "vm_ram" {
+  description = "VM ram"
+  default     = "2048"
+}

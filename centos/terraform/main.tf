@@ -14,12 +14,12 @@ provider "hyperv" {
 
 ### PREREQ
 # https://blogs.technet.microsoft.com/jhoward/2008/03/28/part-1-hyper-v-remote-management-you-do-not-have-the-required-permission-to-complete-this-task-contact-the-administrator-of-the-authorization-policy-for-the-computer-computername/
-resource "hyperv_virtual_machine" "centos1" {
+resource "hyperv_virtual_machine" "vm" {
   count                = "${var.vm_quantity}"
   name                 = "${var.vm_nameprefix}${count.index}"
   processors           = "2"
   generation           = "1"
-  ram                  = "8192"
+  ram                  = "${var.vm_ram}"
   switch               = "${var.hyperv_switch}"
   disable_network_boot = false
   path                 = "${var.hyperv_path}"
